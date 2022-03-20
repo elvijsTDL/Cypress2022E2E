@@ -9,7 +9,7 @@ const ITEM_PRICES = ".inventory_item_price";
 
 export class ProductsPage extends BasePage {
   static inventoryContainerIsVisible() {
-    this.isVisible(INVENTORY_CONTAINER);
+    this.doesNotExist(INVENTORY_CONTAINER);
   }
 
   static addFirstItemToTheCart() {

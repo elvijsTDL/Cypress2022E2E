@@ -2,5 +2,11 @@
   "chromeWebSecurity": false,
   "baseUrl": "https://www.saucedemo.com",
   "projectId": "77vr8n",
-  "videoUploadOnPasses": false
+  "videoUploadOnPasses": false,
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "html": false,
+    "overwrite": false
+  }
 }

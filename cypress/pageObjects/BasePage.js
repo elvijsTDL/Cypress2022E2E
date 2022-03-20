@@ -31,7 +31,7 @@ export class BasePage {
     cy.get(selector).first().click();
   }
 
-  static selectOption(selector,option){
-    cy.get(selector).select(option)
+  static selectOption(selector, option) {
+    cy.get(selector).select(option);
   }
 }

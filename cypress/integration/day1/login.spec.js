@@ -3,6 +3,30 @@ import { BasePage } from "../../pageObjects/BasePage";
 import { ProductsPage } from "../../pageObjects/pages/ProductsPage";
 
 describe("Login test cases", () => {
+  before(() => {
+    cy.request(
+      "POST",
+      "https://discord.com/api/webhooks/955086226547965952/WuaK1GMcRDVkOexPEz60OETIorJOvQeX4L1ftw7jDn_NuDM_g5J20FkMAcY_mMoUmXPr",
+      {
+        username: "Selenium is dead",
+        content: "Starting login test cases",
+        tts: true,
+      }
+    );
+  });
+
+  after(() => {
+    cy.request(
+      "POST",
+      "https://discord.com/api/webhooks/955086226547965952/WuaK1GMcRDVkOexPEz60OETIorJOvQeX4L1ftw7jDn_NuDM_g5J20FkMAcY_mMoUmXPr",
+      {
+        username: "Selenium is dead",
+        content: "Ended login test cases",
+        tts: true,
+      }
+    );
+  });
+
   it("Logging in with a valid user", () => {
     LoginPage.openLoginPage();
     LoginPage.inputUsername("standard_user");
@@ -48,6 +72,12 @@ describe("Login test cases", () => {
   });
 
   it("User with cookies is logged in", () => {
+    BasePage.loginWithoutUi();
+    ProductsPage.inventoryContainerIsVisible();
+  });
+
+  it("Starting the tests in mobile view", () => {
+    cy.viewport("iphone-x");
     BasePage.loginWithoutUi();
     ProductsPage.inventoryContainerIsVisible();
   });
