@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('loginWithCookies', (user) => {
-    cy.setCookie("session-username",user)
-    cy.visit("/inventory.html" , {failOnStatusCode: false})
-})
+Cypress.Commands.add("loginWithCookies", (user) => {
+  cy.setCookie("session-username", user);
+  cy.visit("/inventory.html", { failOnStatusCode: false });
+});

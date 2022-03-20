@@ -1,4 +1,6 @@
 {
   "chromeWebSecurity": false,
-  "baseUrl": "https://www.saucedemo.com"
+  "baseUrl": "https://www.saucedemo.com",
+  "projectId": "77vr8n",
+  "videoUploadOnPasses": false
 }
