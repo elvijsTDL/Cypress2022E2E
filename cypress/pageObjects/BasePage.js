@@ -30,4 +30,8 @@ export class BasePage {
   static clickFirst(selector) {
     cy.get(selector).first().click();
   }
+
+  static selectOption(selector,option){
+    cy.get(selector).select(option)
+  }
 }
